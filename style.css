@@ -1,105 +1,92 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienvenue à bord</title>
-    <style>
-        body {
-            font-family: Verdana, sans-serif;
-            background-color: #b5b5b5c9;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
+/* 🟢 Global */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
 
-        .container {
-            max-width: 1000px;
-            margin: 20px auto;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            position: relative; /* Ajouté pour le positionnement du logo */
-        }
+/* 🟢 Conteneur principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
 
-        .header {
-            display: flex;
-            flex-direction: column; /* Empile les éléments verticalement */
-            align-items: center;
-            position: relative; /* Ajouté pour le positionnement du logo */
-        }
+/* 🟢 Titre */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
 
-        .logo {
-            width: 200px;
-            height: auto;
-            position: absolute;
-            top: -35px; /* Positionne le logo en haut */
-            left: 30px;
-        }
+.logo {
+    height: 60px; /* Ajuste selon ton logo */
+}
 
-        h1 {
-            font-size: 40px;
-            font-weight: bold;
-            margin: 0;
-            padding: 10px 0;
-        }
+.title {
+    font-size: 32px;
+    font-weight: bold;
+}
 
-        h2 {
-            font-size: 30px;
-            font-style:italic;
-            margin: 0;
-            padding: 10px 0;
-        }
+/* 🟢 Mise en page principale */
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
 
-        main {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
+/* 🟢 Diaporama */
+.slideshow {
+    width: 50%;
+    max-width: 500px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-        .photos {
-            width: 45%;
-            overflow: hidden;
-            border-radius: 10px;
-        }
+/* 🟢 Carte */
+.map-container {
+    position: relative;
+    width: 50%;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-        .photos img {
-            width: 100%;
-            height: 400px; /* Correction de la hauteur */
-            object-fit: cover;
-            display: none;
-        }
+#map {
+    width: 100%;
+    height: 100%;
+}
 
-        .photos img:first-child {
-            display: block;
-        }
+/* 🟢 Texte au-dessus de la carte */
+.map-text {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
 
-        #map {
-            width: 70%;
-            height: 450px;
-            border-radius: 10px;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="header">
-            <img src="images/logo.png" alt="Logo" class="logo">
-            <h1>Bienvenue à bord</h1>
-            <h2>Welcome on board / Willkommen an Bord</h2>
-        </div>
-        <main>
-            <div class="photos">
-                <img src="images/photo1.jpg" alt="Photo 1">
-                <img src="images/photo2.jpg" alt="Photo 2">
-                <img src="images/photo3.jpg" alt="Photo 3">
-                <!-- Ajoutez plus d'images si nécessaire -->
-            </div>
-            <div id="map">
-                <!-- Contenu de la carte -->
-            </div>
-        </main>
-    </div>
-</body>
-</html>
+/* 🟢 Responsive */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+
+    .slideshow, .map-container {
+        width: 100%;
+    }
+}
