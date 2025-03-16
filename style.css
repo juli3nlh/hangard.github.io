@@ -43,7 +43,7 @@ body {
 
 /* 🟢 Diaporama */
 .slideshow {
-    width: 50%;
+    width: 40%;
     max-width: 500px;
     overflow: hidden;
     border-radius: 10px;
