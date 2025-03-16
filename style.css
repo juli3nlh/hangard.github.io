@@ -1,62 +1,47 @@
-/* 🟢 Global */
-body {
-    font-family: Arial, sans-serif;
+/* 🟢 Réinitialisation globale */
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-}
-
-/* 🟢 Conteneur principal */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
-}
-
-/* 🟢 Titre */
-.header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-}
-
-.logo {
-    height: 60px; /* Ajuste selon ton logo */
-}
-
-.title {
-    font-size: 32px;
-    font-weight: bold;
+    box-sizing: border-box;
 }
 
 /* 🟢 Mise en page principale */
-.main-content {
+main {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start; /* Pour éviter le chevauchement */
     gap: 20px;
-    margin-top: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
 }
 
 /* 🟢 Diaporama */
-.slideshow {
-    width: 40%;
+.photos {
+    width: 50%;
     max-width: 500px;
+    height: 500px; /* Assurer la même hauteur que la carte */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.photos img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajuste l’image pour éviter qu’elle dépasse */
+}
+
 /* 🟢 Carte */
 .map-container {
-    position: relative;
-    width: 30%;
-    height: 500px;
+    width: 50%;
+    height: 500px; /* Même hauteur que la diapo */
     border-radius: 10px;
     overflow: hidden;
+    position: relative;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -76,17 +61,23 @@ body {
     border-radius: 5px;
     font-size: 16px;
     font-weight: bold;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
     z-index: 1000;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* 🟢 Responsive */
+/* 🟢 Responsive (Mobile) */
 @media (max-width: 768px) {
-    .main-content {
+    main {
         flex-direction: column;
+        align-items: center;
     }
 
-    .slideshow, .map-container {
+    .photos, .map-container {
         width: 100%;
+        height: auto;
+    }
+
+    .photos img {
+        height: auto;
     }
 }
