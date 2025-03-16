@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenue à bord</title>
+    <style>
+        body {
+            font-family: Verdana, sans-serif;
+            background-color: #b5b5b5c9;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            position: relative; /* Ajouté pour le positionnement du logo */
+        }
+
+        .header {
+            display: flex;
+            flex-direction: column; /* Empile les éléments verticalement */
+            align-items: center;
+            position: relative; /* Ajouté pour le positionnement du logo */
+        }
+
+        .logo {
+            width: 200px;
+            height: auto;
+            position: absolute;
+            top: -35px; /* Positionne le logo en haut */
+            left: 30px;
+        }
+
+        h1 {
+            font-size: 40px;
+            font-weight: bold;
+            margin: 0;
+            padding: 10px 0;
+        }
+
+        h2 {
+            font-size: 30px;
+            font-style:italic;
+            margin: 0;
+            padding: 10px 0;
+        }
+
+        main {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .photos {
+            width: 45%;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .photos img {
+            width: 100%;
+            height: 400px; /* Correction de la hauteur */
+            object-fit: cover;
+            display: none;
+        }
+
+        .photos img:first-child {
+            display: block;
+        }
+
+        #map {
+            width: 70%;
+            height: 450px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="images/logo.png" alt="Logo" class="logo">
+            <h1>Bienvenue à bord</h1>
+            <h2>Welcome on board / Willkommen an Bord</h2>
+        </div>
+        <main>
+            <div class="photos">
+                <img src="images/photo1.jpg" alt="Photo 1">
+                <img src="images/photo2.jpg" alt="Photo 2">
+                <img src="images/photo3.jpg" alt="Photo 3">
+                <!-- Ajoutez plus d'images si nécessaire -->
+            </div>
+            <div id="map">
+                <!-- Contenu de la carte -->
+            </div>
+        </main>
+    </div>
+</body>
+</html>
