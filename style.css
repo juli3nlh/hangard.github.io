@@ -1,83 +1,70 @@
-/* 🟢 Réinitialisation globale */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* 🟢 Mise en page principale */
+/* 🟢 Conteneur principal */
 main {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start; /* Pour éviter le chevauchement */
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Deux colonnes égales */
     gap: 20px;
+    align-items: start; /* Pour éviter que la carte ne monte trop haut */
     padding: 20px;
     max-width: 1200px;
     margin: auto;
 }
 
-/* 🟢 Diaporama */
+/* 🟢 Photos / Catalogue */
 .photos {
-    width: 50%;
-    max-width: 500px;
-    height: 500px; /* Assurer la même hauteur que la carte */
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
 }
 
 .photos img {
     width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ajuste l’image pour éviter qu’elle dépasse */
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 
 }
 
 /* 🟢 Carte */
 .map-container {
-    width: 50%;
-    height: 500px; /* Même hauteur que la diapo */
+    width: 100%;
+    max-width: 600px;
+    position: relative;
     border-radius: 10px;
     overflow: hidden;
-    position: relative;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #map {
     width: 100%;
-    height: 100%;
+    height: 400px; /* Ajustable selon besoin */
 }
 
-/* 🟢 Texte au-dessus de la carte */
+/* 🟢 Texte de la carte */
 .map-text {
     position: absolute;
-    top: 10px;
+    top: -30px; /* Légèrement au-dessus */
     left: 50%;
     transform: translateX(-50%);
     background: rgba(255, 255, 255, 0.9);
-    padding: 8px 12px;
+    padding: 5px 10px;
     border-radius: 5px;
     font-size: 16px;
     font-weight: bold;
     z-index: 1000;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* 🟢 Responsive (Mobile) */
 @media (max-width: 768px) {
     main {
-        flex-direction: column;
-        align-items: center;
+        grid-template-columns: 1fr; /* Une seule colonne */
+        text-align: center;
     }
 
     .photos, .map-container {
         width: 100%;
-        height: auto;
+        max-width: none;
     }
 
-    .photos img {
-        height: auto;
+    .map-text {
+        top: 10px;
     }
 }
