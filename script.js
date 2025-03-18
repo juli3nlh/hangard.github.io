@@ -1,14 +1,27 @@
-// === 🎥 Diaporama automatique ===
-let slides = document.querySelectorAll('.slide');
-let index = 0;
+document.addEventListener("DOMContentLoaded", function () {
+    let slides = document.querySelectorAll('.slide');
+    let index = 0;
 
-function showNextSlide() {
-    slides[index].style.display = "none";
-    index = (index + 1) % slides.length;
-    slides[index].style.display = "block";
-}
+    // Vérifier si les images sont bien détectées
+    if (slides.length === 0) {
+        console.error("Aucune image trouvée pour le diaporama !");
+        return;
+    }
 
-setInterval(showNextSlide, 10000); // Change toutes les 3 secondes
+    function showNextSlide() {
+        slides.forEach((slide, i) => {
+            slide.style.opacity = (i === index) ? "1" : "0";
+        });
+
+        index = (index + 1) % slides.length;
+    }
+
+    // Lancer le diaporama
+    setInterval(showNextSlide, 3000); // Change d'image toutes les 3 secondes
+
+    // Afficher immédiatement la première image
+    slides[index].style.opacity = "1";
+});
 
 // === 🗺️ Carte Leaflet avec position GPS en temps réel ===
 let map = L.map('map').setView([49.4939, 0.1077], 13); // Le Havre par défaut
